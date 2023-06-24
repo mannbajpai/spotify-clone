@@ -11,19 +11,28 @@ export interface UserDetails{
 
 };
 
+export interface Song {
+    id: string;
+    user_id: string;
+    author: string;
+    title: string;
+    song_path: string;
+    image_path: string;
+  }
+
 export interface Product{
     id: string;
     active?: boolean;
     name: string;
     description?: string;
     image?: string;
-    metadeta?: Stripe.Metadata;
+    metadata?: Stripe.Metadata;
 }
 
 export interface Price {
     id: string;
     product_id: string;
-    active?: string;
+    active?: boolean;
     description?: string;
     unit_amount?: number;
     currency?: string;
@@ -31,7 +40,7 @@ export interface Price {
     interval?: Stripe.Price.Recurring.Interval;
     interval_count?: number;
     trial_period_days?: number | null;
-    metadeta?: Stripe.Metadata;
+    metadata?: Stripe.Metadata;
     products?: Product;
 }
 
